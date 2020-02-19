@@ -44,7 +44,7 @@ readRawData <- function(x, includeMSn = FALSE, dropEmptyScans = TRUE,
     }
     ## Fix issue #174 in RMassBank.
     if (length(idx_ms1) == 0 & !includeMSn)
-        stop("No MS1 data found in file ", x, "!")
+        warning("No MS1 data found in file ", x, "!")
     if (length(idx_ms1)) {
         pks <- mzR::peaks(msd, idx_ms1)
         ## Fix problem with single spectrum files (issue #66)
